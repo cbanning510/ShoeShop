@@ -11,6 +11,30 @@ import Foundation
 
 class DataService {
     static let instance = DataService()
+    static let cart = Cart()
+    
+    class Cart {
+        var products = [SelectedProduct]()
+        func addProduct(product: Product) {
+            let selectedProduct = SelectedProduct(product: product, quantity: 1)
+            products.append(selectedProduct)
+        }
+        
+        func getProducts() -> [SelectedProduct] {
+            return products
+        }
+    }
+    
+    struct SelectedProduct {
+        var product: Product
+        var quantity = 0
+    }
+    
+    
+    func updateCart(product: Product, quantity: Int) {
+        // find Product in cart
+        // change quantity
+    }
     
     let shoes = [
         Product(title: "Space Hippie 04", price: "$140", imageName: "space-hippie-4", description: "Space Hippie is a story of trash transformed. From the upper to the outsole, Space Hippie 04 is made of at least 25% recycled material by weight. Not only is it the most lightweight silhouette within the collection, it also has the lowest carbon footprint."),

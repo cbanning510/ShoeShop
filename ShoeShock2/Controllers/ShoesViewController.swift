@@ -11,11 +11,11 @@ class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollect
 
     @IBOutlet weak var shoesCollectionView: UICollectionView!
     
+    @IBOutlet weak var cartButton: UIButton!
     private(set) public var products = [Product]()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()        
         products = DataService.instance.getShoes()
         shoesCollectionView.delegate = self
         shoesCollectionView.dataSource = self
@@ -25,6 +25,9 @@ class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollect
         return DataService.instance.getShoes().count
     }
     
+    @IBAction func cartButtonPressed(_ sender: UIButton) {
+        print("cart button pressed!!\n")
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShoeCollectionViewCell", for: indexPath) as? ShoeCollectionViewCell {
             let product = products[indexPath.row]
@@ -38,7 +41,7 @@ class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let product = DataService.instance.getShoes()[indexPath.row]
-        print(product)
+        //print(product)
         performSegue(withIdentifier: "DetailsSegue", sender: product)
     }
     
