@@ -45,10 +45,10 @@ class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let DetailsVC = segue.destination as? DetailsViewController {
             if let product = sender as? Product {
-                DetailsVC.imageUrl = product.imageName
+                DetailsVC.product = product
             }
         }
-        
+
     }
 
 

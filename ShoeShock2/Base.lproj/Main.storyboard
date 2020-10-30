@@ -136,19 +136,79 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="air-max-90" translatesAutoresizingMaskIntoConstraints="NO" id="x18-74-8va">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="387"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air-Max-270" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="869-j4-SKQ">
+                                <rect key="frame" x="19.999999999999993" y="407" width="120.33333333333331" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onu-yO-gOQ">
+                                <rect key="frame" x="20" y="446" width="384" height="93"/>
+                                <string key="text">The Nike Air Max 270 amps up an icon with a huge Max Air unit for cushioning under every step. It feeatures a stretchy inner sleeve for a snug, sock-like fit.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.20067328209999999" green="0.19621700049999999" blue="0.20087963340000001" alpha="0.71136558219178081" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90q-qu-V1Y">
+                                <rect key="frame" x="20" y="564" width="374" height="2"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="S9t-2x-LK7"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecx-gn-qlI">
+                                <rect key="frame" x="28" y="606" width="358" height="54"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.32549019610000002" blue="0.32576538710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="ARA-4T-8n2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                <state key="normal" title="ADD TO CART">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cartBtnPressed:" destination="4ae-YM-wAS" eventType="touchUpInside" id="JEf-Qp-C0K"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$150.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oF1-ez-Ybs">
+                                <rect key="frame" x="313" y="407" width="81" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R4m-C7-x1M"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="R4m-C7-x1M" firstAttribute="bottom" secondItem="x18-74-8va" secondAttribute="bottom" constant="329" id="2dx-u6-kwR"/>
+                            <constraint firstItem="90q-qu-V1Y" firstAttribute="top" secondItem="onu-yO-gOQ" secondAttribute="bottom" constant="25" id="500-Cs-a2o"/>
+                            <constraint firstItem="R4m-C7-x1M" firstAttribute="trailing" secondItem="oF1-ez-Ybs" secondAttribute="trailing" constant="20" id="5xc-m4-eun"/>
+                            <constraint firstItem="onu-yO-gOQ" firstAttribute="top" secondItem="869-j4-SKQ" secondAttribute="bottom" constant="10" id="AU4-XB-NJV"/>
                             <constraint firstItem="x18-74-8va" firstAttribute="trailing" secondItem="R4m-C7-x1M" secondAttribute="trailing" id="BZG-2A-S7A"/>
+                            <constraint firstItem="R4m-C7-x1M" firstAttribute="trailing" secondItem="Ecx-gn-qlI" secondAttribute="trailing" constant="28" id="CB8-hb-fNk"/>
+                            <constraint firstAttribute="trailing" secondItem="90q-qu-V1Y" secondAttribute="trailing" constant="20" id="FG8-DZ-zPO"/>
+                            <constraint firstItem="oF1-ez-Ybs" firstAttribute="top" secondItem="x18-74-8va" secondAttribute="bottom" constant="20" id="Fa6-sa-g0S"/>
+                            <constraint firstAttribute="trailing" secondItem="onu-yO-gOQ" secondAttribute="trailing" constant="10" id="GgO-jJ-9VA"/>
+                            <constraint firstItem="869-j4-SKQ" firstAttribute="leading" secondItem="R4m-C7-x1M" secondAttribute="leading" constant="20" id="L1b-vi-3qc"/>
+                            <constraint firstItem="Ecx-gn-qlI" firstAttribute="leading" secondItem="R4m-C7-x1M" secondAttribute="leading" constant="28" id="R4y-wh-Wqn"/>
                             <constraint firstItem="x18-74-8va" firstAttribute="top" secondItem="R4m-C7-x1M" secondAttribute="top" id="TbP-ht-znG"/>
+                            <constraint firstItem="onu-yO-gOQ" firstAttribute="leading" secondItem="R4m-C7-x1M" secondAttribute="leading" constant="20" id="YaB-Gb-BY2"/>
+                            <constraint firstItem="R4m-C7-x1M" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="869-j4-SKQ" secondAttribute="trailing" symbolic="YES" id="eye-Hg-PgX"/>
+                            <constraint firstItem="Ecx-gn-qlI" firstAttribute="top" secondItem="90q-qu-V1Y" secondAttribute="bottom" constant="40" id="oty-ZJ-iAy"/>
                             <constraint firstItem="x18-74-8va" firstAttribute="leading" secondItem="R4m-C7-x1M" secondAttribute="leading" id="rjx-NR-Peg"/>
+                            <constraint firstItem="90q-qu-V1Y" firstAttribute="leading" secondItem="wOy-V3-s22" secondAttribute="leading" constant="20" id="uJd-C1-6Tg"/>
+                            <constraint firstItem="869-j4-SKQ" firstAttribute="top" secondItem="x18-74-8va" secondAttribute="bottom" constant="20" id="vd0-QX-5MA"/>
+                            <constraint firstItem="R4m-C7-x1M" firstAttribute="bottom" secondItem="90q-qu-V1Y" secondAttribute="bottom" constant="150" id="w6f-Qu-8cD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ixu-kC-hgJ"/>
                     <connections>
+                        <outlet property="addToCartBtn" destination="Ecx-gn-qlI" id="3Ma-BL-LQI"/>
+                        <outlet property="descriptionLabel" destination="onu-yO-gOQ" id="7Lw-CC-cp6"/>
+                        <outlet property="horizontalLine" destination="90q-qu-V1Y" id="Jgi-3F-nDW"/>
+                        <outlet property="priceLabel" destination="oF1-ez-Ybs" id="tz2-qh-TQX"/>
                         <outlet property="shoeImage" destination="x18-74-8va" id="31A-2u-GO3"/>
+                        <outlet property="shoeNameLabel" destination="869-j4-SKQ" id="QVy-A4-fXv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAT-i5-g80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -161,9 +221,6 @@
         <image name="icons8-heart-48" width="48" height="48"/>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
