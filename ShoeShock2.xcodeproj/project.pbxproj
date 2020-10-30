@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83DF802E254C5FEF00B7AB73 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF802D254C5FEF00B7AB73 /* DetailsViewController.swift */; };
 		83E4F088254C2E2E00746898 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E4F087254C2E2E00746898 /* AppDelegate.swift */; };
 		83E4F08A254C2E2E00746898 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E4F089254C2E2E00746898 /* SceneDelegate.swift */; };
 		83E4F08C254C2E2E00746898 /* ShoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E4F08B254C2E2E00746898 /* ShoesViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83DF802D254C5FEF00B7AB73 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		83E4F084254C2E2E00746898 /* ShoeShock2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoeShock2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E4F087254C2E2E00746898 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83E4F089254C2E2E00746898 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				83E4F08B254C2E2E00746898 /* ShoesViewController.swift */,
+				83DF802D254C5FEF00B7AB73 /* DetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				83E4F088254C2E2E00746898 /* AppDelegate.swift in Sources */,
 				83E4F0A3254C3A2800746898 /* Product.swift in Sources */,
 				83E4F08A254C2E2E00746898 /* SceneDelegate.swift in Sources */,
+				83DF802E254C5FEF00B7AB73 /* DetailsViewController.swift in Sources */,
 				83E4F09F254C39DD00746898 /* DataService.swift in Sources */,
 				83E4F0A7254C3AC400746898 /* ShoeCollectionViewCell.swift in Sources */,
 			);

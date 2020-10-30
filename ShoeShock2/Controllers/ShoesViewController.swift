@@ -35,6 +35,21 @@ class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollect
             return ShoeCollectionViewCell()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = DataService.instance.getShoes()[indexPath.row]
+        print(product)
+        performSegue(withIdentifier: "DetailsSegue", sender: product)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let DetailsVC = segue.destination as? DetailsViewController {
+            if let product = sender as? Product {
+                DetailsVC.imageUrl = product.imageName
+            }
+        }
+        
+    }
 
 
 }

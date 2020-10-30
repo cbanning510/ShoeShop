@@ -118,11 +118,42 @@
                     </view>
                     <connections>
                         <outlet property="shoesCollectionView" destination="Ha6-oS-1pt" id="PdC-nO-VI9"/>
+                        <segue destination="4ae-YM-wAS" kind="show" identifier="DetailsSegue" id="tdF-7b-ak2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="111.68478260869566"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="CAJ-yR-Z4n">
+            <objects>
+                <viewController id="4ae-YM-wAS" customClass="DetailsViewController" customModule="ShoeShock2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wOy-V3-s22">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="air-max-90" translatesAutoresizingMaskIntoConstraints="NO" id="x18-74-8va">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="387"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R4m-C7-x1M"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="R4m-C7-x1M" firstAttribute="bottom" secondItem="x18-74-8va" secondAttribute="bottom" constant="329" id="2dx-u6-kwR"/>
+                            <constraint firstItem="x18-74-8va" firstAttribute="trailing" secondItem="R4m-C7-x1M" secondAttribute="trailing" id="BZG-2A-S7A"/>
+                            <constraint firstItem="x18-74-8va" firstAttribute="top" secondItem="R4m-C7-x1M" secondAttribute="top" id="TbP-ht-znG"/>
+                            <constraint firstItem="x18-74-8va" firstAttribute="leading" secondItem="R4m-C7-x1M" secondAttribute="leading" id="rjx-NR-Peg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ixu-kC-hgJ"/>
+                    <connections>
+                        <outlet property="shoeImage" destination="x18-74-8va" id="31A-2u-GO3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uAT-i5-g80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802.89855072463774" y="111.68478260869566"/>
         </scene>
     </scenes>
     <resources>
@@ -130,6 +161,9 @@
         <image name="icons8-heart-48" width="48" height="48"/>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
