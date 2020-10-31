@@ -34,7 +34,7 @@ class ShoeCollectionViewCell: UICollectionViewCell {
         productInCell = product
         productImage.image = UIImage(named: product.imageName)
         productTitle.text = product.title
-        productPrice.text = product.price
+        productPrice.text = "$" + product.price
         newLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
     }
     

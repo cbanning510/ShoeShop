@@ -7,7 +7,15 @@
 
 import Foundation
 
-struct SelectedProduct {
+struct SelectedProduct: Equatable {
+    static func == (lhs: SelectedProduct, rhs: SelectedProduct) -> Bool {
+        if lhs.product?.title == rhs.product?.title {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     var product: Product?
     var quantity = 0
 }

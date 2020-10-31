@@ -37,7 +37,7 @@ class DetailsViewController: UIViewController {
         if let product = product {
             shoeImage.image = UIImage(named: product.imageName)
             shoeNameLabel.text = product.title
-            priceLabel.text = product.price
+            priceLabel.text = "$" + product.price
             descriptionLabel.text = product.description
             addToCartBtn.layer.cornerRadius = 6
         }
