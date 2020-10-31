@@ -7,11 +7,17 @@
 
 import UIKit
 
-class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
-    @IBOutlet weak var shoesCollectionView: UICollectionView!
+class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, Test {
     
-    @IBOutlet weak var cartButton: UIButton!
+    func changeTitle(title: String) {
+        shoeShockLabel.text = title
+        shoesCollectionView.reloadData()
+    }
+
+   
+    @IBOutlet weak var shoesCollectionView: UICollectionView!
+    @IBOutlet weak var shoeShockLabel: UILabel!
+    @IBOutlet weak var cartButton: UIButton!    
     private(set) public var products = [Product]()
     
     override func viewDidLoad() {
@@ -21,13 +27,16 @@ class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollect
         shoesCollectionView.dataSource = self
     }
     
+    @IBAction func cartButtonPressed(_ sender: UIButton) {
+        print("cart button pressed!!\n")
+    }
+    
+    // collectionView functions:
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return DataService.instance.getShoes().count
     }
     
-    @IBAction func cartButtonPressed(_ sender: UIButton) {
-        print("cart button pressed!!\n")
-    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShoeCollectionViewCell", for: indexPath) as? ShoeCollectionViewCell {
             let product = products[indexPath.row]
@@ -41,19 +50,17 @@ class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let product = DataService.instance.getShoes()[indexPath.row]
-        //print(product)
         performSegue(withIdentifier: "DetailsSegue", sender: product)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let DetailsVC = segue.destination as? DetailsViewController {
+            DetailsVC.delegate = self //this is where the magic happens!!!
             if let product = sender as? Product {
                 DetailsVC.product = product
             }
         }
 
     }
-
-
 }
 

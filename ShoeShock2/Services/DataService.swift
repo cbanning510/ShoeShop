@@ -25,12 +25,6 @@ class DataService {
         }
     }
     
-    struct SelectedProduct {
-        var product: Product
-        var quantity = 0
-    }
-    
-    
     func updateCart(product: Product, quantity: Int) {
         // find Product in cart
         // change quantity
@@ -43,8 +37,7 @@ class DataService {
         Product(title: "Blazer Mid 77 Vintage", price: "$135", imageName: "blazer-mid-77-vintage", description: "The Nike Blazer Mid '77 Vintage harnesses the old-school look of Nike basketball with a vintage midsole finish, making it look like you've been saving them for years."),
         Product(title: "Air Tailwind 79", price: "$145", imageName: "air-tailwind-79", description: "Making its debut in 1978 for the Honolulu Marathon, the Nike Air Tailwind was a revolution in cushioning. Now, a racing icon returns with the Nike Air Tailwind 79, featuring nearly original materials and colors, plus the Nike Air unit that made it a winner."),
         Product(title: "Air Max 90", price: "$195", imageName: "air-max-90", description: "Nothing as fly, nothing as comfortable, nothing as proven. The Nike Air Max 90 stays true to its OG running roots with the iconic Waffle outsole, stitched overlays and classic, color-accented TPU plates. Accents of retro color celebrate the first generation while Max Air cushioning adds comfort to your journey.")
-    ]
-    
+    ]    
     
     func getShoes() -> [Product] {
         return shoes
