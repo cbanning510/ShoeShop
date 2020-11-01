@@ -30,12 +30,21 @@ class DataService {
         func getProducts() -> [SelectedProduct] {
             return products
         }
+        
+        func updateCart(product: Product, quantity: Double) {
+            for (index, element) in products.enumerated() {
+                if element.product!.title == product.title {
+                    if quantity == 0 {
+                        products.remove(at: index)
+                        return
+                    }
+                    products[index].quantity = Int(quantity)
+                }
+            }
+        }
     }
     
-    func updateCart(product: Product, quantity: Int) {
-        // find Product in cart
-        // change quantity
-    }
+    
     
     let shoes = [
         Product(title: "Space Hippie 04", price: "140", imageName: "space-hippie-4", description: "Space Hippie is a story of trash transformed. From the upper to the outsole, Space Hippie 04 is made of at least 25% recycled material by weight. Not only is it the most lightweight silhouette within the collection, it also has the lowest carbon footprint."),
