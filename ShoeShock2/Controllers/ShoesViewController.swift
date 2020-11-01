@@ -7,6 +7,8 @@
 
 import UIKit
 
+let productCellNotificationKey = "com.chrisbanning/productCell"
+
 class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, Test {
     
     func changeTitle(title: String) {
@@ -20,15 +22,30 @@ class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var cartButton: UIButton!    
     private(set) public var products = [Product]()
     
+    let update = Notification.Name(rawValue: productCellNotificationKey)
+    
     override func viewDidLoad() {
         super.viewDidLoad()        
         products = DataService.instance.getShoes()
         shoesCollectionView.delegate = self
         shoesCollectionView.dataSource = self
+        createObservers()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @IBAction func cartButtonPressed(_ sender: UIButton) {
-        print("cart button pressed!!\n")
+        //print("cart button pressed!!\n")
+    }
+    
+    func createObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTableView), name: update, object: nil)
+    }
+    // notification function
+    @objc func updateTableView () {
+        shoesCollectionView.reloadData()
     }
     
     // collectionView functions:

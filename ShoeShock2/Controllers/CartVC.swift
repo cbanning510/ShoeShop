@@ -7,12 +7,14 @@
 
 import UIKit
 
-class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UpdateTable {
-    
-    func update() {
+class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UpdateTotals {
+    func updateTotalItemCountAndPrice() {
+        currentCart = DataService.cart.getProducts()
+        totalPrice = 0.0
+        totalItemCount = 0
+        updateTotals()
         cartTable.reloadData()
     }
-    
 
     @IBOutlet weak var cartTable: UITableView!
     @IBOutlet weak var totalItemsLabel: UILabel!
@@ -20,23 +22,20 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Upda
     
     var totalPrice = 0.0
     var totalItemCount = 0
+    var currentCart: [SelectedProduct]?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentCart = DataService.cart.getProducts()
         cartTable.dataSource = self
         cartTable.delegate = self
-        
-        let currentCart = DataService.cart.getProducts()
-        
-        
-        
-        for product in DataService.cart.getProducts() {
-            print("\(product.product!.title): \(product.quantity)")
-        }
-        // calculate total for all products:
-        for item in currentCart {
-            print(item.quantity)
+        updateTotals()
+    }
+    
+    func updateTotals() {
+        for item in currentCart! {
+            print("item is: \(item)")
             totalItemCount += item.quantity
             totalPrice += (Double(item.product!.price)! * Double(item.quantity))
         }
@@ -56,7 +55,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Upda
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell") as? ProductCell {
-            cell.updateTableDelegate = self
+            cell.totalsDelegate = self
             let product = DataService.cart.getProducts()[indexPath.row].product
             cell.updateViews(selectedProduct: product!)
             return cell

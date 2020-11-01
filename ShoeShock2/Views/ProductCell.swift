@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol UpdateTable {
-    func update()
+protocol UpdateTotals {
+    func updateTotalItemCountAndPrice()
 }
 
 class ProductCell: UITableViewCell {
@@ -21,13 +21,17 @@ class ProductCell: UITableViewCell {
     
     var quantity = 0
     var currentProduct: Product?
-    var updateTableDelegate: UpdateTable?
+    var totalsDelegate: UpdateTotals?
     
     @IBAction func updateQuantity(_ sender: UIStepper) {
         let quantityToSend = sender.value
         DataService.cart.updateCart(product: currentProduct!, quantity: quantityToSend)
         updateViews(selectedProduct: currentProduct!)
-        updateTableDelegate?.update()
+        //protocol/delegate:
+        totalsDelegate?.updateTotalItemCountAndPrice()
+        // notification/observer:
+        let name = Notification.Name(rawValue: productCellNotificationKey)
+        NotificationCenter.default.post(name: name, object: nil)
     }
     
     func updateViews(selectedProduct: Product) {
