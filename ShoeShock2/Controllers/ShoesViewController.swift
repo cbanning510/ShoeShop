@@ -10,12 +10,6 @@ import UIKit
 let productCellNotificationKey = "com.chrisbanning/productCell"
 
 class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, Test {
-    
-    func changeTitle(title: String) {
-        shoeShockLabel.text = title
-        shoesCollectionView.reloadData()
-    }
-
    
     @IBOutlet weak var shoesCollectionView: UICollectionView!
     @IBOutlet weak var shoeShockLabel: UILabel!
@@ -48,7 +42,10 @@ class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollect
         shoesCollectionView.reloadData()
     }
     
-    // collectionView functions:
+    func changeTitle(title: String) {
+        shoeShockLabel.text = title
+        shoesCollectionView.reloadData()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return DataService.instance.getShoes().count
@@ -72,7 +69,7 @@ class ShoesViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let DetailsVC = segue.destination as? DetailsViewController {
-            DetailsVC.delegate = self //this is where the magic happens!!!
+            DetailsVC.delegate = self
             if let product = sender as? Product {
                 DetailsVC.product = product
             }

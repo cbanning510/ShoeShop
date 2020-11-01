@@ -49,7 +49,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Upda
     }
     
     @IBAction func purchasePressedBtn(_ sender: UIButton) {
-        print("Purchase pressed!!!")
+        // print("Purchase pressed!")
     }
     
     @IBAction func stepperPressed(_ sender: UIStepper) {
