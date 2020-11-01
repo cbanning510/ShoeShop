@@ -11,6 +11,7 @@ import UIKit
 class ShoeCollectionViewCell: UICollectionViewCell {
     
     var productInCell: Product?
+    var isHeartFilled = false
     
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productTitle: UILabel!
@@ -20,6 +21,7 @@ class ShoeCollectionViewCell: UICollectionViewCell {
     
     func updateViews(product: Product) {
         heartBtn.setImage(UIImage(named: "icons8-heart-48"), for: .normal)
+        isHeartFilled = false
 
         let currentCart = DataService.cart.getProducts()     
         
@@ -27,6 +29,7 @@ class ShoeCollectionViewCell: UICollectionViewCell {
             if let shoeTitle = shoe.product?.title {
                 if shoeTitle == product.title {
                     heartBtn.setImage(UIImage(named: "filledHeart"), for: .normal)
+                    isHeartFilled = true
                 }
             }
         }
@@ -39,8 +42,12 @@ class ShoeCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func heartPressed(_ sender: UIButton) {
-        print("heart pressed")
-        sender.setImage(UIImage(named: "filledHeart"), for: .normal)
-        DataService.cart.addProduct(product: productInCell!)
+        if !isHeartFilled {
+            sender.setImage(UIImage(named: "filledHeart"), for: .normal)
+            isHeartFilled = true
+            DataService.cart.addProduct(product: productInCell!)
+        } else {
+            print("already in cart!!!")
+        }
     }    
 }

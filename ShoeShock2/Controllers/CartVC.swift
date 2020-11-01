@@ -19,6 +19,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Upda
     @IBOutlet weak var cartTable: UITableView!
     @IBOutlet weak var totalItemsLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var purchaseBtn: UIButton!
     
     var totalPrice = 0.0
     var totalItemCount = 0
@@ -30,12 +31,12 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Upda
         currentCart = DataService.cart.getProducts()
         cartTable.dataSource = self
         cartTable.delegate = self
+        purchaseBtn.layer.cornerRadius = 6
         updateTotals()
     }
     
     func updateTotals() {
         for item in currentCart! {
-            print("item is: \(item)")
             totalItemCount += item.quantity
             totalPrice += (Double(item.product!.price)! * Double(item.quantity))
         }
@@ -48,7 +49,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Upda
     }
     
     @IBAction func purchasePressedBtn(_ sender: UIButton) {
-        //print("Purchase pressed!!!")
+        print("Purchase pressed!!!")
     }
     
     @IBAction func stepperPressed(_ sender: UIStepper) {

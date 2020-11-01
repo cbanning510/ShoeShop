@@ -364,6 +364,7 @@
                                 </state>
                                 <connections>
                                     <action selector="purchasePressedBtn:" destination="qoG-Qr-WeH" eventType="touchUpInside" id="X97-jw-hhR"/>
+                                    <segue destination="E37-7U-lFO" kind="show" id="hXX-L2-mxv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -392,6 +393,7 @@
                     <navigationItem key="navigationItem" id="0aU-yV-RPN"/>
                     <connections>
                         <outlet property="cartTable" destination="t1a-cW-7ce" id="TgZ-W0-maf"/>
+                        <outlet property="purchaseBtn" destination="UkQ-aW-41I" id="Kgn-Et-tUj"/>
                         <outlet property="totalItemsLabel" destination="JIU-S1-fzu" id="cTx-u1-gLd"/>
                         <outlet property="totalPriceLabel" destination="PNp-s0-rK1" id="BV9-H4-8QK"/>
                     </connections>
@@ -399,6 +401,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJg-rH-CcK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1362.3188405797102" y="116.57608695652175"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jm5-YU-Tdc">
+            <objects>
+                <viewController id="E37-7U-lFO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0vV-BT-4Kg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase Complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ym-xA-MqY">
+                                <rect key="frame" x="94.666666666666671" y="341.66666666666669" width="224.66666666666663" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xaN-1L-FRX"/>
+                        <color key="backgroundColor" red="0.90005367989999996" green="0.32435679439999998" blue="0.42744791510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6Ym-xA-MqY" firstAttribute="centerY" secondItem="0vV-BT-4Kg" secondAttribute="centerY" id="2vG-hr-7Xu"/>
+                            <constraint firstItem="6Ym-xA-MqY" firstAttribute="centerX" secondItem="0vV-BT-4Kg" secondAttribute="centerX" id="akk-8q-WKq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2sn-nO-tZy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RUJ-Zu-gVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2047.826086956522" y="125.54347826086958"/>
         </scene>
     </scenes>
     <resources>
